@@ -24,4 +24,4 @@ ALERT([$cosineSimilarity].join())
 
 |llama.cpp `Q8_0`|ONNX Runtime `Int8`|CTranslate2 `Int8`
 |-|-|-|
-|``|``|``
+|`0.7656311172784`|`0.7364669108598`|`0.7662483944303`
