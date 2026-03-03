@@ -47,7 +47,7 @@ fit: "on"}
 
 $folder:=$homeFolder.folder("granite-embedding-278m-multilingual")
 $path:="granite-embedding-278m-multilingual-Q8_0.gguf"
-$URL:="ibm-granite/granite-embedding-278m-multilingual"
+$URL:="keisuke-miyako/granite-embedding-278m-multilingual-gguf-q8_0"
 
 $huggingface:=cs:C1710.event.huggingface.new($folder; $URL; $path)
 $huggingfaces:=cs:C1710.event.huggingfaces.new([$huggingface])
