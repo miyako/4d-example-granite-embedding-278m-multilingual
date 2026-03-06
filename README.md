@@ -1,8 +1,8 @@
 ## [ibm-granite/granite-embedding-278m-multilingual](https://huggingface.co/ibm-granite/granite-embedding-278m-multilingual)
 
-|`max_position_embeddings`|`hidden_size`|`num_hidden_layers`
-|-:|-:|-:|
-|`512`|`768`|`12`
+|`max_position_embeddings`|`hidden_size`|`num_hidden_layers`|`pooling`
+|-:|-:|-:|-:|
+|`512`|`768`|`12`|`cls`
 
 ```4d
 var $en; $fr : 4D.Vector
@@ -24,4 +24,4 @@ ALERT([$cosineSimilarity].join())
 
 |llama.cpp `Q8_0`|ONNX Runtime `Int8`|CTranslate2 `Int8`
 |-|-|-|
-|`0.78835751674315`|`0.73646691085979`|`0.76624839443032`
+|`0.76550467452203`|`0.73646691085979`|`0.76624839443032`
