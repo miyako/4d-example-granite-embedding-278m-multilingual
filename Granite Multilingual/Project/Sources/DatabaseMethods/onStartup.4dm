@@ -50,7 +50,7 @@ If (Not:C34($logFile.exists))
 	$logFile.setContent(4D:C1709.Blob.new())
 End if 
 var $threads; $max_position_embeddings; $batch_size : Integer
-$threads:=System info:C1571.cpuThreads
+$threads:=System info:C1571.cpuThreads\2
 $max_position_embeddings:=512
 $batch_size:=512
 
