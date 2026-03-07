@@ -10,12 +10,15 @@ var $AIClient : cs.AIKit.OpenAI
 var $cosineSimilarity : Real
 $AIClient:=cs.AIKit.OpenAI.new()
 
-$AIClient.baseURL:="http://127.0.0.1:8080/v1"  
+$AIClient.baseURL:="http://127.0.0.1:8080/v1"  // llama-server
 
-$en:=$AIClient.embeddings.create("How do I reset my password?").embedding.embedding
-$fr:=$AIClient.embeddings.create("Comment réinitialiser mon mot de passe?").embedding.embedding
+$batch:=$AIClient.embeddings.create(["query: Comment réinitialiser mon mot de passe?"; \
+  "passage: To reset your password you must contanct customer support."])
 
-$cosineSimilarity:=$en.cosineSimilarity($fr)
+$fr:=$batch.embeddings[0].embedding
+$en:=$batch.embeddings[1].embedding
+
+$cosineSimilarity:=$fr.cosineSimilarity($en)
 
 ALERT([$cosineSimilarity].join())
 ```
@@ -24,4 +27,4 @@ ALERT([$cosineSimilarity].join())
 
 |llama.cpp `Q8_0`|ONNX Runtime `Int8`|CTranslate2 `Int8`
 |-|-|-|
-|`0.76550467452203`|`0.73646691085979`|`0.76624839443032`
+|`0.78802578514481`|`0.73646691085979`|`0.76624839443032`
