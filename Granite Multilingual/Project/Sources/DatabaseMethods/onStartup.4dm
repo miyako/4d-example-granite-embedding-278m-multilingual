@@ -59,7 +59,7 @@ $threads:=2
 $port:=8080
 $options:={\
 embeddings: True:C214; \
-pooling: "mean"; \
+pooling: "cls"; \
 log_file: $logFile; \
 ctx_size: $batch_size*$batches*$threads; \
 batch_size: $batch_size*$batches; \
